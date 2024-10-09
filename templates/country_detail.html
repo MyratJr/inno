@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% include "header.html" %}
+
+    <main class="container">
+        <section class="country-detail">
+            <h2 class="country-title">
+                {% if LANGUAGE_CODE == 'tk' %}
+                    {{ country.name_tk }}
+                {% elif LANGUAGE_CODE == 'en' %}
+                    {{ country.name_en }}
+                {% elif LANGUAGE_CODE == 'ja' %}
+                    {{ country.name_ja }}
+                {% else %}
+                    {{ country.name_en }}  <!-- Default to English -->
+                {% endif %}
+            </h2>
+            <div class="country-overview">
+                <div class="country-description">
+                    <h3>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Beýany
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Description
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            説明
+                        {% else %}
+                            Description
+                        {% endif %}
+                    </h3>
+                    <p>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            {{ country.description_tk|linebreaks }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ country.description_en|linebreaks }}
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            {{ country.description_ja|linebreaks }}
+                        {% else %}
+                            {{ country.description_en|linebreaks }}  <!-- Default to English -->
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="country-data">
+                    <h3>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Esasy Maglumat
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Key Data
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            主要データ
+                        {% else %}
+                            Key Data
+                        {% endif %}
+                    </h3>
+                    <ul>
+                        <li>
+                            <strong>
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    Ilaty
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    Population
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    人口
+                                {% else %}
+                                    Population
+                                {% endif %}
+                            </strong>: {{ country.population }}
+                        </li>
+                        <li>
+                            <strong>
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    GDP
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    GDP
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    国内総生産
+                                {% else %}
+                                    GDP
+                                {% endif %}
+                            </strong>: {{ country.gdp }}
+                        </li>
+                        <li>
+                            <strong>
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    Innowasiýadaky Orny
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    Innovation Index
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    イノベーション指数
+                                {% else %}
+                                    Innovation Index
+                                {% endif %}
+                            </strong>: {{ country.innovation_index_rank }}
+                        </li>
+                        <li>
+                            <strong>
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    Ýeňiş ýagdaýlary
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    Success Cases
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    成功事例
+                                {% else %}
+                                    Success Cases
+                                {% endif %}
+                            </strong>:
+                            {% if country.success_case %}
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    Hawa
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    Yes
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    はい
+                                {% else %}
+                                    Yes
+                                {% endif %}
+                            {% else %}
+                                {% if LANGUAGE_CODE == 'tk' %}
+                                    Ýok
+                                {% elif LANGUAGE_CODE == 'en' %}
+                                    No
+                                {% elif LANGUAGE_CODE == 'ja' %}
+                                    いいえ
+                                {% else %}
+                                    No
+                                {% endif %}
+                            {% endif %}
+                        </li>                    
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="innovation-practices">
+            <div style="margin-top:25px">
+            {% if LANGUAGE_CODE == 'tk' %}
+                <h2>Innowasiýa amallary</h2>
+            {% elif LANGUAGE_CODE == 'en' %}
+                <h2>Innovation Practices</h2>
+            {% elif LANGUAGE_CODE == 'ja' %}
+                <h2>イノベーションの実践</h2>
+            {% else %}
+                <h2>Innovation Practices</h2>
+            {% endif %}
+            </div>
+            <div class="practice-container">
+                {% for practice in practices %}
+                    <div class="practice-card {% if practice.success_case %}success{% endif %}">
+                        <p><strong>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Ýyl:
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Year:
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            年:
+                        {% else %}
+                            Year:
+                        {% endif %}
+                        </strong> {{ practice.year }}</p>
+                        <p>{{ practice.description }}</p>
+                        {% if practice.success_case %}
+                            <p><em>
+                            {% if LANGUAGE_CODE == 'tk' %}
+                                Üstünlikli
+                            {% elif LANGUAGE_CODE == 'en' %}
+                                Success Case
+                            {% elif LANGUAGE_CODE == 'ja' %}
+                                成功事例
+                            {% else %}
+                                Success Case
+                            {% endif %}
+                            </em></p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="innovation-practices">
+            <div style="margin-top:25px">
+                {% if LANGUAGE_CODE == 'tk' %}
+                    <h2>{{country.name_tk}} - milli innowasiýa ulgamy barada giňişleýin</h2>
+                {% elif LANGUAGE_CODE == 'en' %}
+                    <h2>{{country.name_en}} - comprehensive information on the national innovation system</h2>
+                {% elif LANGUAGE_CODE == 'ja' %}
+                    <h2>{{country.name_ja}} - 国家イノベーションシステムに関する包括的な情報</h2>
+                {% else %}
+                    <h2>{{country.name_en}} - comprehensive information on the national innovation system</h2>
+                {% endif %}
+                </div>
+                {% if LANGUAGE_CODE == 'tk' %}
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{country.huge_data_tk|linebreaks}}</p>
+                {% elif LANGUAGE_CODE == 'en' %}
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{country.huge_data_en|linebreaks}}</p>
+                {% elif LANGUAGE_CODE == 'ja' %}
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{country.huge_data_ja|linebreaks}}</p>
+                {% else %}
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{country.huge_data_en|linebreaks}}</p>
+                {% endif %}
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            {% if LANGUAGE_CODE == 'tk' %}
+                &copy; 2024 Milli innowasiýa ulgamlary. Ähli hukuklar goralandyr.
+            {% elif LANGUAGE_CODE == 'en' %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% elif LANGUAGE_CODE == 'ja' %}
+                &copy; 2024 国家イノベーションシステム。無断転載を禁じます。
+            {% else %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% endif %}
+        </p>
+    </footer>
+</body>
+</html>

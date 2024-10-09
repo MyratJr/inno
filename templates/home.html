@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header" style="margin-top:-20px">
+        {% include "header.html" %}
+        <section class="hero">
+            {% if LANGUAGE_CODE == 'tk' %}
+                <h2 class="hero-title">Milli innowasiýa ulgamy</h2>
+                <p class="hero-text">Bütin dünýäde innowasiýa ulgamlaryny öwreniň, deňeşdiriň we düşüniň.</p>
+                {% elif LANGUAGE_CODE == 'en' %}
+                <h2 class="hero-title">National Innovation Systems</h2>
+                <p class="hero-text">Explore, compare, and understand innovation systems around the world.</p>
+            {% elif LANGUAGE_CODE == 'ja' %}
+            <h2 class="hero-title">国家イノベーションシステム</h2>
+            <p class="hero-text">世界中のイノベーション システムを探索、比較、理解します。</p>
+            {% else %}
+            <h2 class="hero-title">National Innovation Systems</h2>
+            <p class="hero-text">Explore, compare, and understand innovation systems around the world.</p>
+            {% endif %}
+        </section>
+    </header>
+    {% if success %}
+        <link rel="stylesheet" href="{% static 'css/swal.css' %}">
+        <script src="{% static 'js/swal.js' %}"></script>
+        <script>
+            Swal.fire({
+                title: 'Thank  you  for  your  message!',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    {% endif %}
+    
+    <main class="container">
+        <section class="country-grid">
+            {% for country in countries %}
+            <div class="country-card">
+                <!-- Background container -->
+                <div class="background-image" style="background-image: url({{ country.flag.url }});"></div>
+                
+                <!-- Content container -->
+                <div class="country-card-content">
+                    <h3 class="country-name">
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            {{ country.name_tk }}
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            {{ country.name_en }}
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            {{ country.name_ja }}
+                        {% else %}
+                            {{ country.name_en }}
+                        {% endif %}
+                    </h3>
+                    <p class="country-population"><strong>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Ilat sany:
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Population:
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            人口:
+                        {% else %}
+                            Population:
+                        {% endif %}
+                    </strong> {{ country.population }}</p>
+                    <p class="country-gdp"><strong>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            JIÖ:
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            GDP:
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            国内総生産:
+                        {% else %}
+                            Population:
+                        {% endif %}
+                    </strong> ${{ country.gdp }}</p>
+                    <p class="country-index"><strong>
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Innowasiýa indeksiniň derejesi:
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Innovation Index Rank:
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            イノベーションインデックスランク:
+                        {% else %}
+                            Innovation Index Rank:
+                        {% endif %}
+                    </strong> {{ country.innovation_index_rank }}</p>
+                    <a href="{% url 'country_detail' country.pk LANGUAGE_CODE %}" class="btn">
+                        {% if LANGUAGE_CODE == 'tk' %}
+                            Giňişleýin
+                        {% elif LANGUAGE_CODE == 'en' %}
+                            Learn More
+                        {% elif LANGUAGE_CODE == 'ja' %}
+                            もっと詳しく知る
+                        {% else %}
+                            Learn More
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            {% if LANGUAGE_CODE == 'tk' %}
+                &copy; 2024 Milli innowasiýa ulgamlary. Allhli hukuklar goralandyr.
+            {% elif LANGUAGE_CODE == 'en' %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% elif LANGUAGE_CODE == 'ja' %}
+                &copy; 2024 年の国家イノベーション システム。無断転載を禁じます。
+            {% else %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% endif %}
+        </p>
+    </footer>
+
+</body>
+</html>

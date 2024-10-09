@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include "header.html" %}
+
+
+    <main class="container" style="margin-top:-20px">
+        <section class="about-theme">
+            {% if LANGUAGE_CODE == 'tk' %}
+                <h2>Milli Innowasiýa Ulgamlary: Teoriýa we Amaly</h2>
+                <p><strong>Milli Innowasiýa Ulgamlary (NIS)</strong> bir ýurtda innowasiýany we tehnologik ösüşi ilerletmek üçin bilelikde işleýän institutlar, syýasatlar we guramalar ulgamyny aňladýar. NIS çarçuwasy, innowasiýanyň diňe bir şahsyýet ýa-da gurama tarapyndan gazanylmajakdygyny, eýsem, hökümetler, kärhanalar, uniwersitetler we ylmy-barlag institutlary ýaly dürli aktýorlaryň özara täsiri netijesinde ýüze çykýandygyny kabul edýär. Bu ulgamlaryň bir ýurduň ykdysady ösüşi, bäsdeşlik ukyby we umumy ösüşi üçin örän möhümdir.</p>
+                
+                <p>Indi teoriýa we amaly ýakyndan öwreneliň.</p>
+                
+                <h3>1. Milli Innowasiýa Ulgamlarynyň Teoriýasy</h3>
+                <p>Teoriýada Milli Innowasiýa Ulgamy ýurtda innowasiýa prosesini goldaýan we ilerledýän ähli guramaçylyk we institusional gurluşlary öz içine alýar. Bu teoriýa bir ýurduň ykdysady üstünlikleriniň innowasiýa we bilim bilen nädip öňe sürülýändigine ünsi jemleýär. Diýmek, innowasiýa diňe tehnologik ösüşden däl-de, eýsem, ykdysadyýetde dürli pudaklar we guramalar arasyndaky özara täsirlerden peýda bolýar.</p>
+                
+                <ul>
+                    <li><strong>Aktýorlar:</strong> Hökümetler, kärhanalar, ylmy-barlag institutlary we uniwersitetler ýaly ykdysadyýetiň dürli pudaklarynda işleýän toparlar.</li>
+                    <li><strong>Özara täsir:</strong> Bu aktýorlaryň arasyndaky hyzmatdaşlyk we maglumat alyş-çalyşygy.</li>
+                    <li><strong>Syýasatlar:</strong> Innowasiýany goldamak üçin hökümet tarapyndan kabul edilen strategiýalar, şol sanda bilim we tehnologiýa syýasatlary.</li>
+                    <li><strong>Bilim we Tehnologiýa:</strong> Ýurtda tehnologiki ösüşi we bilim alyş-çalyşyny ilerledýän bilim ulgamy.</li>
+                </ul>
+                
+                <h3>2. Milli Innowasiýa Ulgamlarynyň Amaly</h3>
+                <p>Amalda, NIS innowasiýanyň diňe gözleg we ösüş bilen çäklenmeýändigini görkezýär. Ol jemgyýetde we ykdysadyýetde täze tehnologiýalaryň, önümleriň we hyzmatlaryň ulanylmagyny höweslendirýän hereketleri öz içine alýar. Bu hereketleriň üstünlik gazanmagy üçin:</p>
+                <ul>
+                    <li>Hökümet düzgünler we goldaw programmalary arkaly innowasiýany öňe sürýär.</li>
+                    <li>Kärhanalar täze bazarlary gözleýärler, bar bolan önümleri gowulandyrýarlar ýa-da täze tehnologiýalary kabul edýärler.</li>
+                    <li>Uniwersitetler we ylmy-barlag merkezleri täze bilimler we tehnologiýalar döredýärler we olary jemgyýet bilen kärhanalar bilen paýlaşýarlar.</li>
+                </ul>
+                
+                <h3>Mysallar:</h3>
+                <ul>
+                    <li>Şwesiýanyň ýokary hilli bilim ulgamy we tehnologiýa gözleglerine uly maýa goýumlary ony dünýäniň öňdebaryjy innowator ýurtlarynyň birine öwürdi.</li>
+                    <li>Koreýa Respublikasynyň hökümeti IT we aragatnaşyk pudaklarynda halkara bäsdeşlige ukyply tehnologiýalary ösdürmekde möhüm rol oýnaýar.</li>
+                </ul>
+                
+                <h3>Netije</h3>
+                <p>Milli Innowasiýa Ulgamy ýurduň ykdysady üstünliklerine gönüden-göni täsir edýän giňişleýin çarçuwadyr. Bu teoriýa, dürli aktýorlaryň we olaryň özara täsirleriniň ykdysady ösüşe we tehnologik ösüşlere nähili goşant goşýandygyny düşündirýär. Amalda bolsa, NIS täze önümleri we hyzmatlary döretmek, täze tehnologiýalary ornaşdyrmak we jemgyýetiň umumy bähbidine peýda getirmek üçin hökümet, işewürlik we akademiýanyň hyzmatdaşlygyny ugur edinýär.</p>
+                
+                <p>Soraglaryňyz bar bolsa, islendik wagt ýüz tutup bilersiňiz!</p>            
+            {% elif LANGUAGE_CODE == 'en' %}
+                <h2>National Innovation Systems: Theory and Practice</h2>
+                <p><strong>National Innovation Systems (NIS)</strong> refer to the network of institutions, policies, and organizations within a country that work together to foster innovation and technological development. The NIS framework acknowledges that innovation cannot be achieved solely by an individual or organization; it results from the interactions of various actors such as governments, businesses, universities, and research institutions. These systems are crucial for a country's economic development, competitiveness, and overall progress.</p>
+                
+                <p>Let's break it down into theory and practice.</p>
+
+                <h3>1. Theory of National Innovation Systems</h3>
+                <p>In theory, the National Innovation System encompasses all organizational and institutional structures that support and promote the innovation process within a country. This theory focuses on how a country's economic successes are driven by innovation and knowledge. In other words, innovation emerges not only from technical advancements but also from the interactions of various sectors and organizations within the economy.</p>
+
+                <ul>
+                    <li><strong>Actors:</strong> Groups such as governments, businesses, research institutions, and universities working across various sectors of the economy.</li>
+                    <li><strong>Interaction:</strong> Collaboration and information exchange among these actors.</li>
+                    <li><strong>Policies:</strong> Strategies adopted by the government to support innovation, including education and technology policies.</li>
+                    <li><strong>Knowledge and Technology:</strong> The educational system that fosters technological advancement and knowledge exchange within the country.</li>
+                </ul>
+
+                <h3>2. Practice of National Innovation Systems</h3>
+                <p>In practice, the NIS demonstrates that innovation extends beyond research and development. It comprises actions that stimulate the use of new technologies, products, and services in society and the economy. For these actions to be successful:</p>
+                <ul>
+                    <li>The government promotes innovation through regulations and support programs.</li>
+                    <li>Businesses explore new markets, enhance existing products, or adopt new technologies.</li>
+                    <li>Universities and research centers create new knowledge and technologies, sharing them with society and businesses.</li>
+                </ul>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>Sweden's high-quality education system and substantial investments in technology research have contributed to its status as one of the world's leading innovator countries.</li>
+                    <li>South Korea's government plays a crucial role in developing internationally competitive technologies in the IT and telecommunications sectors.</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>The National Innovation System is a comprehensive framework that directly influences a country's economic success. The theory explains how various actors and their interactions contribute to economic growth and technological advancements. Practically, the NIS directs the collaboration of government, business, and academia to create new products and services, implement new technologies, and benefit society as a whole.</p>
+
+                <p>If you have any further questions, feel free to ask!</p>
+            {% elif LANGUAGE_CODE == 'ja' %}
+                <h2>国家イノベーションシステム: 理論と実践</h2>
+                <p><strong>国家イノベーションシステム (NIS)</strong> とは、国の中でイノベーションと技術開発を促進するために協力する機関、政策、組織のネットワークを指します。NISの枠組みは、イノベーションが個人や組織単独で達成できるものではなく、政府、企業、大学、研究機関など、さまざまなアクターの相互作用によって生み出されることを認識しています。これらのシステムは、国の経済発展、競争力、全体的な進歩にとって非常に重要です。</p>
+                
+                <p>では、理論と実践に分けて説明しましょう。</p>
+                
+                <h3>1. 国家イノベーションシステムの理論</h3>
+                <p>理論的には、国家イノベーションシステムは、国の中でイノベーションプロセスを支援・促進するすべての組織および制度的な構造を含んでいます。この理論は、国の経済的成功がイノベーションと知識によってどのように駆動されるかに焦点を当てています。言い換えれば、イノベーションは技術的な進歩だけでなく、経済の中でさまざまなセクターや組織の相互作用から生じます。</p>
+                
+                <ul>
+                    <li><strong>アクター:</strong> 政府、企業、研究機関、大学など、さまざまな経済セクターで活動するグループ。</li>
+                    <li><strong>相互作用:</strong> これらのアクター間の協力と情報交換。</li>
+                    <li><strong>政策:</strong> 政府が採用するイノベーションを支援するための戦略、教育政策や技術政策を含む。</li>
+                    <li><strong>知識と技術:</strong> 国の中で技術的進歩と知識交換を促進する教育システム。</li>
+                </ul>
+                
+                <h3>2. 国家イノベーションシステムの実践</h3>
+                <p>実践的には、NISはイノベーションが研究開発にとどまらないことを示しています。それは、社会や経済において新しい技術、製品、サービスの利用を刺激する行動を含んでいます。これらの行動を成功させるためには、以下が必要です:</p>
+                <ul>
+                    <li>政府は、規制や支援プログラムを通じてイノベーションを促進します。</li>
+                    <li>企業は、新しい市場を探り、既存の製品を強化したり、新しい技術を採用したりします。</li>
+                    <li>大学や研究機関は、新しい知識や技術を生み出し、それを社会や企業と共有します。</li>
+                </ul>
+                
+                <h3>例:</h3>
+                <ul>
+                    <li>スウェーデンの高品質な教育システムと技術研究への多額の投資が、同国を世界有数のイノベーター国にしています。</li>
+                    <li>韓国政府は、ITおよび通信分野で国際競争力のある技術を開発する上で重要な役割を果たしています。</li>
+                </ul>
+                
+                <h3>結論</h3>
+                <p>国家イノベーションシステムは、国の経済的成功に直接影響を与える包括的な枠組みです。理論的には、さまざまなアクターとその相互作用が経済成長と技術革新にどのように貢献するかを説明します。実際には、NISは政府、企業、学術界の協力を促し、新しい製品やサービスを生み出し、新しい技術を実装し、社会全体に利益をもたらします。</p>
+                
+                <p>さらに質問があれば、ぜひお聞きください！</p>
+            {% else %}
+                <h2>National Innovation Systems: Theory and Practice</h2>
+                <p><strong>National Innovation Systems (NIS)</strong> refer to the network of institutions, policies, and organizations within a country that work together to foster innovation and technological development. The NIS framework acknowledges that innovation cannot be achieved solely by an individual or organization; it results from the interactions of various actors such as governments, businesses, universities, and research institutions. These systems are crucial for a country's economic development, competitiveness, and overall progress.</p>
+                
+                <p>Let's break it down into theory and practice.</p>
+
+                <h3>1. Theory of National Innovation Systems</h3>
+                <p>In theory, the National Innovation System encompasses all organizational and institutional structures that support and promote the innovation process within a country. This theory focuses on how a country's economic successes are driven by innovation and knowledge. In other words, innovation emerges not only from technical advancements but also from the interactions of various sectors and organizations within the economy.</p>
+
+                <ul>
+                    <li><strong>Actors:</strong> Groups such as governments, businesses, research institutions, and universities working across various sectors of the economy.</li>
+                    <li><strong>Interaction:</strong> Collaboration and information exchange among these actors.</li>
+                    <li><strong>Policies:</strong> Strategies adopted by the government to support innovation, including education and technology policies.</li>
+                    <li><strong>Knowledge and Technology:</strong> The educational system that fosters technological advancement and knowledge exchange within the country.</li>
+                </ul>
+
+                <h3>2. Practice of National Innovation Systems</h3>
+                <p>In practice, the NIS demonstrates that innovation extends beyond research and development. It comprises actions that stimulate the use of new technologies, products, and services in society and the economy. For these actions to be successful:</p>
+                <ul>
+                    <li>The government promotes innovation through regulations and support programs.</li>
+                    <li>Businesses explore new markets, enhance existing products, or adopt new technologies.</li>
+                    <li>Universities and research centers create new knowledge and technologies, sharing them with society and businesses.</li>
+                </ul>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>Sweden's high-quality education system and substantial investments in technology research have contributed to its status as one of the world's leading innovator countries.</li>
+                    <li>South Korea's government plays a crucial role in developing internationally competitive technologies in the IT and telecommunications sectors.</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>The National Innovation System is a comprehensive framework that directly influences a country's economic success. The theory explains how various actors and their interactions contribute to economic growth and technological advancements. Practically, the NIS directs the collaboration of government, business, and academia to create new products and services, implement new technologies, and benefit society as a whole.</p>
+
+                <p>If you have any further questions, feel free to ask!</p>
+            {% endif %}            
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            {% if LANGUAGE_CODE == 'tk' %}
+                &copy; 2024 Milli innowasiýa ulgamlary. Allhli hukuklar goralandyr.
+            {% elif LANGUAGE_CODE == 'en' %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% elif LANGUAGE_CODE == 'ja' %}
+                &copy; 2024 年の国家イノベーション システム。無断転載を禁じます。
+            {% else %}
+                &copy; 2024 National Innovation Systems. All Rights Reserved.
+            {% endif %}
+        </p>
+    </footer>
+</body>
+</html>

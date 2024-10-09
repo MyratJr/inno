@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if LANGUAGE_CODE == 'tk' %}
+        <title>Milli innowasiýa ulgamy</title>
+    {% elif LANGUAGE_CODE == 'en' %}
+        <title>National Innovation Systems</title>
+    {% elif LANGUAGE_CODE == 'ja' %}
+        <title>国家イノベーションシステム</title>
+    {% else %}
+        <title>National Innovation Systems</title>
+    {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        .but{
+            background-color: white;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+    </style>
+    <header class="header">
+        <nav class="navbar">
+            {% if LANGUAGE_CODE == 'tk' %}
+                <h1 class="logo">Innowasiýa Ulgamy</h1>
+            {% elif LANGUAGE_CODE == 'en' %}
+                <h1 class="logo">Innovation Systems</h1>
+            {% elif LANGUAGE_CODE == 'ja' %}
+                <h1 class="logo">イノベーションシステム</h1>
+            {% else %}
+                <h1 class="logo">Innovation Systems</h1>
+            {% endif %}
+            <ul class="nav-links">
+                {% if LANGUAGE_CODE == 'tk' %}
+                    <li><a href="{% url 'home' LANGUAGE_CODE %}">Baş sahypa</a></li>
+                    <li><a href="{% url 'about_theme' LANGUAGE_CODE %}">Tema barada</a></li>
+                    <li><a href="{% url 'message' LANGUAGE_CODE %}">Habarlaşmak</a></li>
+                {% elif LANGUAGE_CODE == 'en' %}
+                    <li><a href="{% url 'home' LANGUAGE_CODE %}">Home</a></li>
+                    <li><a href="{% url 'about_theme' LANGUAGE_CODE %}">About</a></li>
+                    <li><a href="{% url 'message' LANGUAGE_CODE %}">Contact</a></li>
+                {% elif LANGUAGE_CODE == 'ja' %}
+                    <li><a href="{% url 'home' LANGUAGE_CODE %}">家</a></li>
+                    <li><a href="{% url 'about_theme' LANGUAGE_CODE %}">について</a></li>
+                    <li><a href="{% url 'message' LANGUAGE_CODE %}">接触</a></li>
+                {% else %}
+                    <li><a href="{% url 'home' LANGUAGE_CODE %}">Home</a></li>
+                    <li><a href="{% url 'about_theme' LANGUAGE_CODE %}">About</a></li>
+                    <li><a href="{% url 'message' LANGUAGE_CODE %}">Contact</a></li>
+                {% endif %}
+            </ul>
+
+            <!-- Language Switcher Dropdown -->
+            <div>
+                {% if LANGUAGE_CODE == 'tk' %}
+                    <a href="{% url 'home' 'tk' %}"><button class='but'>Türkmençe</button></a>
+                    <a href="{% url 'home' 'en' %}"><button class='but'>Iňlis dili</button></a>
+                    <a href="{% url 'home' 'ja' %}"><button class='but'>Ýapon dili</button></a>
+                {% elif LANGUAGE_CODE == 'en' %}
+                    <a href="{% url 'home' 'tk' %}"><button class='but'>Turkmen</button></a>
+                    <a href="{% url 'home' 'en' %}"><button class='but'>English</button></a>
+                    <a href="{% url 'home' 'ja' %}"><button class='but'>Japanese</button></a>
+                {% elif LANGUAGE_CODE == 'ja' %}
+                    <a href="{% url 'home' 'tk' %}"><button class='but'>トルクメン語</button></a>
+                    <a href="{% url 'home' 'en' %}"><button class='but'>英語</button></a>
+                    <a href="{% url 'home' 'ja' %}"><button class='but'>日本語</button></a>
+                {% else %}
+                    <a href="{% url 'home' 'tk' %}"><button class='but'>Turkmen</button></a>
+                    <a href="{% url 'home' 'en' %}"><button class='but'>English</button></a>
+                    <a href="{% url 'home' 'ja' %}"><button class='but'>Japanese</button></a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
