@@ -40,8 +40,8 @@ ROOT_URLCONF = 'Nis.urls'
 
 
 UNFOLD = {
-    "SITE_TITLE": "Arwana",
-    "SITE_HEADER": "Arwana",
+    "SITE_TITLE": "Innovation system",
+    "SITE_HEADER": "Innovation system",
     "SITE_URL": "/",
     "SITE_ICON": lambda request: static("unfold/images/green-energy.png"),
     "SITE_LOGO": lambda request: static("unfold/images/green-energy.png"),
